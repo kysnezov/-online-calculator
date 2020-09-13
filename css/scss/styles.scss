@@ -1,0 +1,173 @@
+$black: #231f20;
+$main: #eb5017;
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+}
+//header
+.wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+.contac{
+    display: flex;
+    justify-content: space-between;
+    & p{
+        justify-content: center;
+        font-size: 18px;
+    }
+    & .calls{
+        color: #f0886e;
+        margin-top: 25px;
+        & .call{
+            font-size: 20px;
+        }
+    }
+}
+nav{
+    & ul{
+        background: $black;
+        margin:auto 20px;
+        list-style-position: inside;
+        & li{
+        display: inline-block;
+        border-right: 1px solid $main;
+        list-style-type: none;
+            &:last-child{
+                border-right: none;
+            }
+            & a{
+                color: #fff;
+                font-size: 14px;
+                text-decoration: none;
+                display: block;
+                padding: 15px 35px 15px 35px;
+             }
+            &:hover{
+                background: $main;
+            }
+    }
+    }
+}
+.posi-cur {
+    padding-left: 3%;
+    margin: 10px 0;
+    & p{
+    display: inline-block;}
+    & a{
+    color: #000;
+    font-size: 13px;
+    }
+    & .last{
+        text-decoration: none;
+    }
+}
+
+//\header
+//main
+.calculator{
+    width: 600px;
+    height: 370px;
+    background: #f2f2f2;
+    margin: 10px 20px;
+    & h2{
+        color: $main;
+        margin-top: 10px;
+        text-align: center;
+        margin-right: 110px;
+        font-size: 30px;
+    }
+    & .forma{
+        //display: flex;
+        //justify-content: space-between;
+        margin-top: 25px;
+        & .info{
+            float: left;
+            text-align: right;
+            height: 170px;
+            width: 200px;
+            margin-right: 25px;
+            & p{
+                margin-bottom: 20px;
+                font-size: 14px;
+            }
+        }
+        & .inputs{
+            display: flex;
+            flex-direction: column;
+            clear: none;
+            height: 200px;
+            width: 100px;
+            position: relative;
+            top: 0;
+            left: auto;
+            & input, select{
+                margin-bottom: 10px;
+                height: 20px;
+                width: 100px;
+                font-size: 11px;
+            }
+            & .radio input{
+                margin: 0;
+                padding: 0;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                height: 12px;
+                width: 12px;
+            }
+        }
+        & .sliders{
+            float: right;
+            & .slider{
+            width: 240px;
+            height: 30px;
+            padding-bottom: 40px;
+            padding-top: 40px;
+                }
+                & .infor{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+        & .otpr{
+           display: flex;
+            & #btn{
+                margin-right: 25px;
+                margin-left: 55px;
+                height: 30px;
+                width: 100px;
+                border-radius: 5px;
+                background: #bcf235;
+                color: #395306;
+            }
+            & .text , & .result{
+                font-size: 15px;
+                color: #395306;
+                margin: auto 0;
+            }
+        }
+    }
+
+//\main
+//footer
+.foot{
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    & .link{
+        background: $black;
+        padding:8px 50px 30px 52px;
+        
+    }
+    & a{
+        color: #fff;
+        margin-left: 10px;
+        font-size: 14px;
+    }
+}
+
+//\footer

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.5.1.js"></script>    
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="js/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">    
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+
+    <title>Онлайн калькулятор</title>
+</head>
+<body>
+    <header class="wrapper">
+        <div class="contac">
+            <img src="images/logo.png" alt="Логотип">
+            <div class="calls">
+            <p>8-800-100-5005</p>
+            <p class="call">+7 (3452) 522-000</p>
+            </div>
+        </div>
+            <nav>
+                <ul class="navig">
+                    <li><a href="#">Кредитные карты</a></li>
+                    <li><a href="#">Вкады</a></li>
+                    <li><a href="#">Дебетовая карота</a></li>
+                    <li><a href="#">Страхование</a></li>
+                    <li><a href="#">Друзья</a></li>
+                    <li><a href="#">Интернет-банк</a></li>
+                </ul>
+            </nav>
+            <div class="posi-cur">
+                <a href="#">Главная</a>
+                <p>-</p>
+                <a href="#">Вклады</a>
+                <p>-</p>
+                <a href="#" class="last">Калькулятор</a>
+            </div>
+    </header>
+    <main class="wrapper">
+        <div class="calculator">
+            <h2>Калькулятор</h2>
+            <form id="ajax_form">
+               <div class="forma">
+                    <div class="info">
+                        <p>Дата оформление вклада</p>
+                        <p>Сумма вклада</p>
+                        <p>Срок вклада</p>
+                        <p>Пополнение вклада</p>
+                        <p>Сумма пополнения вклада</p>            
+                    </div>
+                    <div class="sliders">
+                       <div class="slider">
+                       <div class="slid" id="slider1"></div>
+                       <div class="infor">
+                           <p>1 тыс. руб</p>
+                           <p>3 млн.</p>
+                       </div>
+                       </div>
+                       <div class="slider">
+                       <div class="slid" id="slider2"></div>
+                       <div class="infor">
+                           <p>1 тыс. руб</p>
+                           <p>3 млн.</p>
+                       </div>
+                       </div>
+                        
+                    </div>
+                    <div class="inputs" >
+                        <input type="text" id="pitcer" name="date">
+                        <input type="number" name="summ1" min="1000" max="3000000" value="1000" id="num1" readonly>
+                        <select name="selec" id="">
+                            <option value="1">1 год</option>
+                            <option value="2">2 год</option>
+                            <option value="3">3 год</option>
+                            <option value="4">5 год</option>
+                            <option value="5">5 год</option>
+                        </select>
+                        <div class="radio">
+                            <input type="radio" name="radio" value="no" checked/> Нет                        
+                            <input type="radio" name="radio" value="yes"/> Да
+                        </div>
+                        <input type="number" name="summadd" min="1000" max="3000000" value="1000" id="num2" readonly>
+                        
+                    </div>
+
+                    <div class="otpr">                    
+                    <div><button type="submit" id="btn" >Разчитать</button></div>
+                    <p class="text">Результат:</p>
+                    <div class="result" id="result_form">1080rus</div>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </main>
+    <footer class="foot wrapper">
+       <div class="link">
+       <a href="#">Кредитные карты</a>
+        <a href="#">Вкады</a>
+        <a href="#">Дебетовая карота</a>
+        <a href="#">Страхование</a>
+        <a href="#">Друзья</a>
+        <a href="#">Интернет-банк</a>
+       </div>
+
+    </footer>
+    <script type="text/javascript">
+        $('#ajax_form').submit(function(){
+            $.post(
+                'call.php',
+                $('#ajax_form').serialize(),
+                function(msg){
+                    $('#result_form').html(msg);
+                }
+            )
+
+            return false;
+    
+});
+    </script>
+</body>
+</html>
